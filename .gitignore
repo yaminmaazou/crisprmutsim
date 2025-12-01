@@ -1,0 +1,12 @@
+.*
+!.gitignore
+!.vscode/
+
+__pycache__/
+*.egg-info
+build/
+
+typings/
+**.svg
+**.prof
+**.db
