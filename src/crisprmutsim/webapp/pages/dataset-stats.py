@@ -14,6 +14,9 @@ dash.register_page(__name__)
 
 
 def generate_array_lengths_figure(lengths: dict[int, float]) -> go.Figure:
+    if not lengths:
+        lengths = {0: 0}
+
     fig = px.bar(
         x=list(lengths.keys()),
         y=list(lengths.values()),
@@ -27,6 +30,9 @@ def generate_array_lengths_figure(lengths: dict[int, float]) -> go.Figure:
 
 
 def generate_repeat_lengths_figure(lengths: dict[int, float]) -> go.Figure:
+    if not lengths:
+        lengths = {0: 0}
+
     fig = px.bar(
         x=list(lengths.keys()),
         y=list(lengths.values()),
@@ -40,6 +46,9 @@ def generate_repeat_lengths_figure(lengths: dict[int, float]) -> go.Figure:
 
 
 def generate_mutation_counts_figure(counts: dict[int, float]) -> go.Figure:
+    if not counts:
+        counts = {0: 0}
+
     fig = px.bar(
         x=list(counts.keys()),
         y=list(counts.values()),
@@ -53,6 +62,9 @@ def generate_mutation_counts_figure(counts: dict[int, float]) -> go.Figure:
 
 
 def generate_cas_type_counts_figure(counts: dict[str, float]) -> go.Figure:
+    if not counts:
+        counts = {" ": 0}
+
     sorted_keys = sorted(counts.keys())
     fig = px.bar(
         x=sorted_keys,
@@ -68,6 +80,9 @@ def generate_cas_type_counts_figure(counts: dict[str, float]) -> go.Figure:
 
 
 def generate_pattern_counts_figure(patterns: dict[int, float]) -> go.Figure:
+    if not patterns:
+        patterns = {i: 0 for i in range(7)}
+
     fig = go.Figure(
         data=[
             go.Bar(
@@ -97,6 +112,9 @@ def generate_pattern_counts_by_cas_type_figure(
     patterns_by_cas_type: dict[str, dict[int, float]],
     normalize: bool = False,
 ):
+    if not patterns_by_cas_type:
+        patterns_by_cas_type = {" ": {i: 0 for i in range(7)}}
+
     fig = go.Figure()
 
     sorted_cas_types = sorted(patterns_by_cas_type.keys())
@@ -150,6 +168,8 @@ def generate_pattern_counts_by_cas_type_figure(
 
 
 def generate_diff_figure(mutation_matrix: list[list[float]]) -> go.Figure:
+    if not mutation_matrix:
+        mutation_matrix = [[0]]
 
     fig = px.imshow(
         mutation_matrix,
@@ -172,6 +192,8 @@ def generate_diff_figure(mutation_matrix: list[list[float]]) -> go.Figure:
 
 
 def generate_diff_from_distal_figure(mutation_matrix: list[list[float]]) -> go.Figure:
+    if not mutation_matrix:
+        mutation_matrix = [[0]]
 
     fig = px.imshow(
         mutation_matrix,
@@ -196,6 +218,8 @@ def generate_diff_from_distal_figure(mutation_matrix: list[list[float]]) -> go.F
 def generate_mutations_per_repeat_figure(
     mutations_per_repeat: dict[int, float],
 ) -> go.Figure:
+    if not mutations_per_repeat:
+        mutations_per_repeat = {0: 0}
 
     positions = sorted(mutations_per_repeat.keys())
 
@@ -220,6 +244,9 @@ def generate_mutations_per_repeat_figure(
 def generate_mutations_per_repeat_normalized_figure(
     mutations_per_repeat_normalized: dict[int, float],
 ) -> go.Figure:
+    if not mutations_per_repeat_normalized:
+        mutations_per_repeat_normalized = {0: 0}
+
     positions = sorted(mutations_per_repeat_normalized.keys())
 
     fig = px.bar(
@@ -243,6 +270,8 @@ def generate_mutations_per_repeat_normalized_figure(
 def generate_mutations_per_repeat_from_distal_figure(
     mutations_per_repeat_from_distal: dict[int, float],
 ) -> go.Figure:
+    if not mutations_per_repeat_from_distal:
+        mutations_per_repeat_from_distal = {0: 0}
 
     positions = sorted(mutations_per_repeat_from_distal.keys())
 
@@ -267,6 +296,8 @@ def generate_mutations_per_repeat_from_distal_figure(
 def generate_mutations_per_base_figure(
     mutations_per_base: dict[int, float],
 ) -> go.Figure:
+    if not mutations_per_base:
+        mutations_per_base = {0: 0}
 
     positions = sorted(mutations_per_base.keys())
 
@@ -289,6 +320,8 @@ def generate_mutations_per_base_figure(
 def generate_mutations_per_base_from_distal_figure(
     mutations_per_base: dict[int, float],
 ) -> go.Figure:
+    if not mutations_per_base:
+        mutations_per_base = {0: 0}
 
     positions = sorted(mutations_per_base.keys())
     mutation_counts = [mutations_per_base[pos] for pos in positions]
