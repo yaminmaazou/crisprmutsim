@@ -113,7 +113,7 @@ layout = html.Div(
                         dcc.Input(
                             id="home--end-time-input",
                             type="number",
-                            min=1,
+                            min=0.01,
                             value=1,
                             style={
                                 "width": "100px",

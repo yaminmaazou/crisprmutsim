@@ -9,7 +9,7 @@ class DNASequence(MutableSequence[str]):
     def __init__(self, sequence: Iterable[str] = "", unsafe: bool = False) -> None:
         self.sequence: list[str]
         if unsafe:
-            self.sequence: list[str] = cast(list[str], sequence)
+            self.sequence: list[str] = cast(list[str], sequence).copy()
         else:
             self.sequence = self._convert_sequence(sequence)
 
