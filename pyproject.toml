@@ -1,0 +1,15 @@
+[project]
+name = "crisprmutsim"
+version = "0.1.0"
+description = "CRISPR repeat mutation simulation and analysis"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Yamin Maazou" }]
+dependencies = ["dash>=3.2.0", "pandas>=2.3.0"]
+
+[project.optional-dependencies]
+dev = ["black>=25.9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
