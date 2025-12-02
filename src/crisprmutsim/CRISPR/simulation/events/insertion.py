@@ -49,7 +49,9 @@ class InsertionGenerator(CRISPREventGenerator[InsertionParameters, Insertion]):
             else:  # distal
                 insertion_index = max(0, len(obj) - distance)
 
-        copy_index = insertion_index if anchor == "proximal" else insertion_index - 1
+        # which one???? need more research/testing
+        # copy_index = insertion_index if anchor == "proximal" else insertion_index - 1
+        copy_index = 0
 
         return Insertion(
             current_time, {"copy_index": copy_index, "insertion_index": insertion_index}

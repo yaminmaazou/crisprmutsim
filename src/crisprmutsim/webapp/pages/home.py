@@ -55,7 +55,7 @@ layout = html.Div(
                             id="home--array-length-input",
                             type="number",
                             min=1,
-                            value=15,
+                            value=18,
                             style={
                                 "width": "100px",
                                 "display": "block",
@@ -72,7 +72,7 @@ layout = html.Div(
                             id="home--repeat-length-input",
                             type="number",
                             min=1,
-                            value=35,
+                            value=32,
                             style={
                                 "width": "100px",
                                 "display": "block",
@@ -131,7 +131,7 @@ layout = html.Div(
                             id="home--num-runs-input",
                             type="number",
                             min=1,
-                            value=10000,
+                            value=1000,
                             style={
                                 "width": "100px",
                                 "display": "block",
@@ -282,7 +282,7 @@ layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Leader offset:"),
+                                html.Label("Leader deletion offset:"),
                                 dcc.Input(
                                     id="home--indel-leader-offset-input",
                                     type="number",
@@ -299,7 +299,7 @@ layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Distal offset:"),
+                                html.Label("Distal deletion offset:"),
                                 dcc.Input(
                                     id="home--indel-distal-offset-input",
                                     type="number",
@@ -316,7 +316,7 @@ layout = html.Div(
                         ),
                         html.Div(
                             [
-                                html.Label("Split offset:"),
+                                html.Label("Split deletion offset (-1 = no splits):"),
                                 dcc.Input(
                                     id="home--indel-split-offset-input",
                                     type="number",
@@ -350,7 +350,7 @@ layout = html.Div(
                                     type="number",
                                     min=0.0,
                                     step=0.1,
-                                    value=0.0,
+                                    value=6522.0,
                                     style={
                                         "width": "100px",
                                         "display": "block",
@@ -402,7 +402,7 @@ layout = html.Div(
                                     type="number",
                                     min=0.001,
                                     step=0.001,
-                                    value=0.1,
+                                    value=0.01,
                                     style={
                                         "width": "100px",
                                         "display": "block",
@@ -431,7 +431,7 @@ layout = html.Div(
                                     type="number",
                                     min=0.0,
                                     step=0.1,
-                                    value=0.0,
+                                    value=137.0,
                                     style={
                                         "width": "100px",
                                         "display": "block",
@@ -481,7 +481,7 @@ layout = html.Div(
                                 dcc.Input(
                                     id="home--deletion-split-offset-input",
                                     type="number",
-                                    min=0,
+                                    min=-1,
                                     value=0,
                                     style={
                                         "width": "100px",
@@ -499,7 +499,7 @@ layout = html.Div(
                                     id="home--deletion-mean-block-length-input",
                                     type="number",
                                     min=1.0,
-                                    value=4.58,
+                                    value=2.73,
                                     style={
                                         "width": "100px",
                                         "display": "block",

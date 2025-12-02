@@ -24,7 +24,7 @@ def generate_array_lengths_figure(lengths: dict[int, float]) -> go.Figure:
     fig.update_layout(
         margin_t=25,
         xaxis_title="Array Length (number of repeats)",
-        yaxis_title="Number of Arrays",
+        yaxis_title="Proportion of Arrays",
     )
     return fig
 
@@ -40,7 +40,7 @@ def generate_repeat_lengths_figure(lengths: dict[int, float]) -> go.Figure:
     fig.update_layout(
         margin_t=25,
         xaxis_title="Repeat Length (number of bases) per Array",
-        yaxis_title="Number of Arrays",
+        yaxis_title="Proportion of Arrays",
     )
     return fig
 
@@ -56,7 +56,7 @@ def generate_mutation_counts_figure(counts: dict[int, float]) -> go.Figure:
     fig.update_layout(
         margin_t=25,
         xaxis_title="Number of Mutations per Array",
-        yaxis_title="Number of Arrays",
+        yaxis_title="Proportion of Arrays",
     )
     return fig
 
@@ -73,7 +73,7 @@ def generate_cas_type_counts_figure(counts: dict[str, float]) -> go.Figure:
     fig.update_layout(
         margin_t=25,
         xaxis_title="CAS Type",
-        yaxis_title="Number of Arrays",
+        yaxis_title="Proportion of Arrays",
     )
 
     return fig
@@ -102,7 +102,7 @@ def generate_pattern_counts_figure(patterns: dict[int, float]) -> go.Figure:
     fig.update_layout(
         margin_t=25,
         xaxis_title="Mutation Pattern",
-        yaxis_title="Number of Arrays",
+        yaxis_title="Proportion of Arrays",
     )
 
     return fig
@@ -160,7 +160,7 @@ def generate_pattern_counts_by_cas_type_figure(
     fig.update_layout(
         margin_t=25,
         xaxis_title="CAS Type",
-        yaxis_title="Proportion of Arrays" if normalize else "Number of Arrays",
+        yaxis_title="Proportion of Arrays" if normalize else "Proportion of Arrays",
         barmode="group",
     )
 
@@ -231,7 +231,7 @@ def generate_mutations_per_repeat_figure(
     fig.update_layout(
         margin_t=25,
         xaxis_title="Repeat position in array",
-        yaxis_title="Number of mutations",
+        yaxis_title="Proportion of mutations",
     )
 
     fig.update_traces(
@@ -283,7 +283,7 @@ def generate_mutations_per_repeat_from_distal_figure(
     fig.update_layout(
         margin_t=25,
         xaxis_title="Repeat position from distal end",
-        yaxis_title="Number of mutations",
+        yaxis_title="Proportion of mutations",
     )
 
     fig.update_traces(
@@ -309,7 +309,7 @@ def generate_mutations_per_base_figure(
     fig.update_layout(
         margin_t=25,
         xaxis_title="Base position in repeat",
-        yaxis_title="Number of mutations",
+        yaxis_title="Proportion of mutations",
     )
 
     fig.update_traces(hovertemplate=f"Base %{{x}}<br>Mutations: %{{y}}<extra></extra>")
@@ -334,7 +334,7 @@ def generate_mutations_per_base_from_distal_figure(
     fig.update_layout(
         margin_t=25,
         xaxis_title="Base position from distal end of repeat",
-        yaxis_title="Number of mutations",
+        yaxis_title="Proportion of mutations",
     )
 
     fig.update_traces(
